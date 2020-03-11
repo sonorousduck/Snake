@@ -79,14 +79,15 @@ public class Snake extends Application {
 
         apple = randomAppleLocation(gameBoard, rectangles);
 
+
         scene.setOnKeyPressed(e -> {
-            if (e.getCode() == KeyCode.W) {
+            if (e.getCode() == KeyCode.W && snake.getDirection() != Direction.SOUTH) {
                 snake.setDirection(Direction.NORTH);
-            } else if (e.getCode() == KeyCode.D) {
+            } else if (e.getCode() == KeyCode.D && snake.getDirection() != Direction.WEST) {
                 snake.setDirection(Direction.EAST);
-            } else if (e.getCode() == KeyCode.S) {
+            } else if (e.getCode() == KeyCode.S && snake.getDirection() != Direction.NORTH) {
                 snake.setDirection(Direction.SOUTH);
-            } else if (e.getCode() == KeyCode.A) {
+            } else if (e.getCode() == KeyCode.A && snake.getDirection() != Direction.EAST) {
                 snake.setDirection(Direction.WEST);
             }
 
